@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "properties": {
+        "break_when_rule_fires": {
+            "required": false,
+            "type": "boolean"
+        },
+        "requestBody": {
+            "type": "object"
+        }
+    }
+}

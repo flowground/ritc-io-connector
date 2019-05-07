@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+        "rule_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "actionIds": {
+                    "description": "Rule description",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "Rule description",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Rule name",
+                    "type": "string"
+                },
+                "status": {
+                    "description": "Rule status",
+                    "enum": [
+                        "active",
+                        "inactive"
+                    ],
+                    "title": "Status",
+                    "type": "string"
+                },
+                "triggerIds": {
+                    "description": "Rule description",
+                    "type": "string"
+                }
+            },
+            "title": "Rule",
+            "type": "object"
+        }
+    }
+}

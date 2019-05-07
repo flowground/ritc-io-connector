@@ -1,0 +1,41 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "channelId": {
+                    "description": "Id of channel used by action",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "codes": {
+                    "description": "Object containing named Javascript code sets",
+                    "type": "object"
+                },
+                "desc": {
+                    "description": "Action description",
+                    "type": "string"
+                },
+                "functionId": {
+                    "description": "Hash id of channel function used by action",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Action name",
+                    "type": "string"
+                },
+                "parameters": {
+                    "description": "Object containing channel-defined action parameters",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "channelId",
+                "functionId"
+            ],
+            "title": "Action59",
+            "type": "object"
+        }
+    }
+}

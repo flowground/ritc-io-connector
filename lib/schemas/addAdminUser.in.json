@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "email": {
+                    "description": "Admin User email address",
+                    "type": "string"
+                },
+                "password": {
+                    "description": "Admin User password",
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "admin",
+                        "guest"
+                    ],
+                    "title": "Type41",
+                    "type": "string"
+                }
+            },
+            "title": "Admin_User",
+            "type": "object"
+        }
+    }
+}

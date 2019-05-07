@@ -1,0 +1,112 @@
+{
+    "type": "object",
+    "properties": {
+        "channel_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "apiType": {
+                    "enum": [
+                        "Internal",
+                        "REST",
+                        "SDK"
+                    ],
+                    "title": "ApiType",
+                    "type": "string"
+                },
+                "desc": {
+                    "description": "Function description",
+                    "type": "string"
+                },
+                "endpoint": {
+                    "description": "Function endpoint",
+                    "type": "string"
+                },
+                "httpMethod": {
+                    "enum": [
+                        "DELETE",
+                        "GET",
+                        "PATCH",
+                        "POST"
+                    ],
+                    "title": "HttpMethod",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Function name",
+                    "type": "string"
+                },
+                "requestParameters": {
+                    "items": {
+                        "properties": {
+                            "description": {
+                                "type": "string"
+                            },
+                            "fieldType": {
+                                "type": "string"
+                            },
+                            "label": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "type": "string"
+                            },
+                            "schema": {
+                                "properties": {
+                                    "datatype": {
+                                        "type": "object"
+                                    },
+                                    "default": {
+                                        "type": "string"
+                                    },
+                                    "expose": {
+                                        "type": "object"
+                                    },
+                                    "required": {
+                                        "type": "object"
+                                    },
+                                    "style": {
+                                        "enum": [
+                                            "postbody",
+                                            "query",
+                                            "template"
+                                        ],
+                                        "title": "Style",
+                                        "type": "string"
+                                    }
+                                },
+                                "title": "Schema",
+                                "type": "object"
+                            }
+                        },
+                        "title": "RequestParameter",
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "responseFormat": {
+                    "enum": [
+                        "Html",
+                        "Json",
+                        "Text",
+                        "Xml"
+                    ],
+                    "title": "ResponseFormat",
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "action",
+                        "trigger"
+                    ],
+                    "title": "Type",
+                    "type": "string"
+                }
+            },
+            "title": "Function7",
+            "type": "object"
+        }
+    }
+}

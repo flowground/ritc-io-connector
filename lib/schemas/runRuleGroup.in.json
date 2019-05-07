@@ -1,0 +1,16 @@
+{
+    "type": "object",
+    "properties": {
+        "rule_id_list": {
+            "required": true,
+            "type": "string"
+        },
+        "break_when_rule_fires": {
+            "required": false,
+            "type": "boolean"
+        },
+        "requestBody": {
+            "type": "object"
+        }
+    }
+}

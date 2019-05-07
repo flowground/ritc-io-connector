@@ -1,0 +1,45 @@
+{
+    "type": "object",
+    "properties": {
+        "trigger_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "channelId": {
+                    "description": "Id of channel used by trigger",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "codes": {
+                    "description": "Object containing named Javascript code sets",
+                    "type": "object"
+                },
+                "desc": {
+                    "description": "Trigger description",
+                    "type": "string"
+                },
+                "functionId": {
+                    "description": "Hash id of channel function used by trigger",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Trigger name",
+                    "type": "string"
+                },
+                "parameters": {
+                    "description": "Object containing channel-defined trigger parameters",
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "channelId",
+                "functionId"
+            ],
+            "title": "Trigger54",
+            "type": "object"
+        }
+    }
+}

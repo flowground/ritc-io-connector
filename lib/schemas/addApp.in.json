@@ -1,0 +1,19 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "desc": {
+                    "description": "App description",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "App name",
+                    "type": "string"
+                }
+            },
+            "title": "App",
+            "type": "object"
+        }
+    }
+}

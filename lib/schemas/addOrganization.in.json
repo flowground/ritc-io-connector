@@ -1,0 +1,26 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "desc": {
+                    "description": "Org description",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Org name",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Org type",
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name"
+            ],
+            "title": "Org",
+            "type": "object"
+        }
+    }
+}

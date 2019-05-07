@@ -1,0 +1,70 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "properties": {
+                "description": {
+                    "description": "Channel description",
+                    "type": "string"
+                },
+                "functions": {
+                    "items": {
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "name": {
+                                "description": "Function name",
+                                "type": "string"
+                            },
+                            "parameters": {
+                                "items": {
+                                    "properties": {
+                                        "key": {
+                                            "type": "string"
+                                        },
+                                        "value": {
+                                            "type": "string"
+                                        }
+                                    },
+                                    "required": [
+                                        "key",
+                                        "value"
+                                    ],
+                                    "title": "Parameter",
+                                    "type": "object"
+                                },
+                                "type": "array"
+                            },
+                            "type": {
+                                "enum": [
+                                    "action",
+                                    "trigger"
+                                ],
+                                "title": "Type",
+                                "type": "string"
+                            }
+                        },
+                        "title": "Function",
+                        "type": "object"
+                    },
+                    "type": "array"
+                },
+                "id": {
+                    "description": "Id of channel",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "Channel name",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "Type of channel. Choices are 'public' or 'private'. Private channels are only viewable within an account, while public channels are viewable to everyone in the system",
+                    "type": "object"
+                }
+            },
+            "title": "Channel",
+            "type": "object"
+        }
+    }
+}

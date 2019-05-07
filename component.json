@@ -1,0 +1,1161 @@
+{
+    "title": "Ritc",
+    "description": "Rules in the Cloud",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/ritc.io/1.0.0/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://api.ritc.io/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "Authorization": {
+                "label": "Authorization (Authorization)",
+                "viewClass": "TextFieldView",
+                "note": "HTTP Basic Authentication/API Key. Basic Auth requires a username and a password. For the username, use a valid API key. Ritc accepts the API key as both plaintext and base64 encoded. Remember that you must append a colon after the api key in order to avoid being prompted for a password. The format is Base64encode(api-key:)"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "listActions": {
+            "main": "./lib/actions/listActions.js",
+            "title": "List actions",
+            "description": "List actions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listActions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAction": {
+            "main": "./lib/actions/addAction.js",
+            "title": "Create a new action",
+            "description": "Create a new action",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeAction": {
+            "main": "./lib/actions/removeAction.js",
+            "title": "Delete an action",
+            "description": "Delete an action",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAction": {
+            "main": "./lib/actions/getAction.js",
+            "title": "Get an action",
+            "description": "Get an action",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateAction": {
+            "main": "./lib/actions/updateAction.js",
+            "title": "Update information about a specific action",
+            "description": "Update information about a specific action",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateAction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "admin": {
+            "main": "./lib/actions/admin.js",
+            "title": "Ping the server",
+            "description": "Ping the server",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/admin.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "logInRitc": {
+            "main": "./lib/actions/logInRitc.js",
+            "title": "Log a message",
+            "description": "Log a message",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/logInRitc.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "pingRitc": {
+            "main": "./lib/actions/pingRitc.js",
+            "title": "Ping the server",
+            "description": "Ping the server",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/pingRitc.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listApps": {
+            "main": "./lib/actions/listApps.js",
+            "title": "Get apps information",
+            "description": "Get apps information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listApps.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addApp": {
+            "main": "./lib/actions/addApp.js",
+            "title": "Create a new app",
+            "description": "Create a new app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAppChannels": {
+            "main": "./lib/actions/listAppChannels.js",
+            "title": "Get app channels",
+            "description": "Get app channels",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAppChannels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAppChannelUsers": {
+            "main": "./lib/actions/listAppChannelUsers.js",
+            "title": "Get users of a specified channel",
+            "description": "Get users of a specified channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAppChannelUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAppChannelUser": {
+            "main": "./lib/actions/getAppChannelUser.js",
+            "title": "Get user of a specified channel",
+            "description": "Get user of a specified channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAppChannelUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAppChannelUser": {
+            "main": "./lib/actions/addAppChannelUser.js",
+            "title": "Create user channel",
+            "description": "Create user channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAppChannelUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listChannelExternalCredentials": {
+            "main": "./lib/actions/listChannelExternalCredentials.js",
+            "title": "Get external credentials",
+            "description": "Get external credentials",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listChannelExternalCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addChannelExternalCredentials": {
+            "main": "./lib/actions/addChannelExternalCredentials.js",
+            "title": "Create new external credentials",
+            "description": "Create new external credentials",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addChannelExternalCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeChannelExternalCredentials": {
+            "main": "./lib/actions/removeChannelExternalCredentials.js",
+            "title": "Delete credentials for a channel",
+            "description": "Delete credentials for a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeChannelExternalCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getChannelExternalCredentials": {
+            "main": "./lib/actions/getChannelExternalCredentials.js",
+            "title": "Get credentials for a channel in an app",
+            "description": "Get credentials for a channel in an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getChannelExternalCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateChannelExternalCredentials": {
+            "main": "./lib/actions/updateChannelExternalCredentials.js",
+            "title": "Update credentials for a channel",
+            "description": "Update credentials for a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateChannelExternalCredentials.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "runRuleGroup": {
+            "main": "./lib/actions/runRuleGroup.js",
+            "title": "Run specified rule group in the app",
+            "description": "Run specified rule group in the app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/runRuleGroup.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "runApp": {
+            "main": "./lib/actions/runApp.js",
+            "title": "Run active app rules",
+            "description": "Run active app rules",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/runApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeApp": {
+            "main": "./lib/actions/removeApp.js",
+            "title": "Delete an app",
+            "description": "Delete an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getApp": {
+            "main": "./lib/actions/getApp.js",
+            "title": "Get app information",
+            "description": "Get app information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateApp": {
+            "main": "./lib/actions/updateApp.js",
+            "title": "Update an app",
+            "description": "Update an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateApp.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listChannels": {
+            "main": "./lib/actions/listChannels.js",
+            "title": "Retrieve Channels",
+            "description": "Retrieve Channels",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listChannels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addChannel": {
+            "main": "./lib/actions/addChannel.js",
+            "title": "Create a channel",
+            "description": "Create a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAnonymousChannels": {
+            "main": "./lib/actions/listAnonymousChannels.js",
+            "title": "Retrieve Channels anonymously",
+            "description": "Retrieve Channels anonymously",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAnonymousChannels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeChannel": {
+            "main": "./lib/actions/removeChannel.js",
+            "title": "Delete a channel",
+            "description": "Delete a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getChannel": {
+            "main": "./lib/actions/getChannel.js",
+            "title": "Get channel information",
+            "description": "Get channel information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateChannel": {
+            "main": "./lib/actions/updateChannel.js",
+            "title": "Update a channel",
+            "description": "Update a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listChannelFunctions": {
+            "main": "./lib/actions/listChannelFunctions.js",
+            "title": "Retrieve Channel Functions",
+            "description": "Retrieve Channel Functions",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listChannelFunctions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addChannelFunction": {
+            "main": "./lib/actions/addChannelFunction.js",
+            "title": "Create a channel function",
+            "description": "Create a channel function",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addChannelFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getChannelFunction": {
+            "main": "./lib/actions/getChannelFunction.js",
+            "title": "Get channel function information",
+            "description": "Get channel function information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getChannelFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addOrganization": {
+            "main": "./lib/actions/addOrganization.js",
+            "title": "Create an org",
+            "description": "Create an org",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addOrganization.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getMyOrganization": {
+            "main": "./lib/actions/getMyOrganization.js",
+            "title": "Get org information",
+            "description": "Get org information",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getMyOrganization.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listRules": {
+            "main": "./lib/actions/listRules.js",
+            "title": "List rules",
+            "description": "List rules",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addRule": {
+            "main": "./lib/actions/addRule.js",
+            "title": "Create a new rule",
+            "description": "Create a new rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeRule": {
+            "main": "./lib/actions/removeRule.js",
+            "title": "Delete a rule",
+            "description": "Delete a rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getRule": {
+            "main": "./lib/actions/getRule.js",
+            "title": "Get a rule",
+            "description": "Get a rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateRule": {
+            "main": "./lib/actions/updateRule.js",
+            "title": "Update information about a specific rule",
+            "description": "Update information about a specific rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "runRule": {
+            "main": "./lib/actions/runRule.js",
+            "title": "Run a rule",
+            "description": "Run a rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/runRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listTriggers": {
+            "main": "./lib/actions/listTriggers.js",
+            "title": "Triggers in an app",
+            "description": "Triggers in an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listTriggers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addTrigger": {
+            "main": "./lib/actions/addTrigger.js",
+            "title": "Create a new trigger in an app",
+            "description": "Create a new trigger in an app",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeTrigger": {
+            "main": "./lib/actions/removeTrigger.js",
+            "title": "Delete a trigger",
+            "description": "Delete a trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getTrigger": {
+            "main": "./lib/actions/getTrigger.js",
+            "title": "Get a trigger",
+            "description": "Get a trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateTrigger": {
+            "main": "./lib/actions/updateTrigger.js",
+            "title": "Update a trigger",
+            "description": "Update a trigger",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateTrigger.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAppUsers": {
+            "main": "./lib/actions/listAppUsers.js",
+            "title": "Users",
+            "description": "Users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAppUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAppUser": {
+            "main": "./lib/actions/addAppUser.js",
+            "title": "Create a new App User",
+            "description": "Create a new App User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAppUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAdminUsers": {
+            "main": "./lib/actions/listAdminUsers.js",
+            "title": "Admin users",
+            "description": "Admin users",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAdminUsers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAdminUser": {
+            "main": "./lib/actions/addAdminUser.js",
+            "title": "Create a new admin user",
+            "description": "Create a new admin user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAdminUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeAdminUser": {
+            "main": "./lib/actions/removeAdminUser.js",
+            "title": "Remove an admin user",
+            "description": "Remove an admin user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeAdminUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAdminUser": {
+            "main": "./lib/actions/getAdminUser.js",
+            "title": "Get an admin user",
+            "description": "Get an admin user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAdminUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateAdminUser": {
+            "main": "./lib/actions/updateAdminUser.js",
+            "title": "Update information about an admin user",
+            "description": "Update information about an admin user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateAdminUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "authenticateAppUserForChannel": {
+            "main": "./lib/actions/authenticateAppUserForChannel.js",
+            "title": "Authenticate a user for a channel",
+            "description": "Authenticate a user for a channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/authenticateAppUserForChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeAppUser": {
+            "main": "./lib/actions/removeAppUser.js",
+            "title": "Remove a user",
+            "description": "Remove a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeAppUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAppUser": {
+            "main": "./lib/actions/getAppUser.js",
+            "title": "Get an App User",
+            "description": "Get an App User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAppUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "updateAppUser": {
+            "main": "./lib/actions/updateAppUser.js",
+            "title": "Update information about an App User",
+            "description": "Update information about an App User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/updateAppUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAppUserChannels": {
+            "main": "./lib/actions/listAppUserChannels.js",
+            "title": "Channels available to a User",
+            "description": "Channels available to a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAppUserChannels.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAppUserToChannel": {
+            "main": "./lib/actions/addAppUserToChannel.js",
+            "title": "Assign a channel to a user",
+            "description": "Assign a channel to a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAppUserToChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeAppUserFromChannel": {
+            "main": "./lib/actions/removeAppUserFromChannel.js",
+            "title": "Remove a user channel assignment",
+            "description": "Remove a user channel assignment",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeAppUserFromChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAppUserChannel": {
+            "main": "./lib/actions/getAppUserChannel.js",
+            "title": "Get a user channel",
+            "description": "Get a user channel",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAppUserChannel.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "listAppUserRules": {
+            "main": "./lib/actions/listAppUserRules.js",
+            "title": "Rules for a User",
+            "description": "Rules for a User",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/listAppUserRules.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "removeAppUserFromRule": {
+            "main": "./lib/actions/removeAppUserFromRule.js",
+            "title": "Remove a rule user",
+            "description": "Remove a rule user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/removeAppUserFromRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "getAppUserRule": {
+            "main": "./lib/actions/getAppUserRule.js",
+            "title": "Get a user",
+            "description": "Get a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/getAppUserRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "addAppUserToRule": {
+            "main": "./lib/actions/addAppUserToRule.js",
+            "title": "Assign a user to a rule",
+            "description": "Assign a user to a rule",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/addAppUserToRule.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "runRuleForAppUser": {
+            "main": "./lib/actions/runRuleForAppUser.js",
+            "title": "Run rule for a user",
+            "description": "Run rule for a user",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/runRuleForAppUser.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

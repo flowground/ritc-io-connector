@@ -1,0 +1,23 @@
+{
+    "type": "object",
+    "properties": {
+        "app_id": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "desc": {
+                    "description": "App description",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "App name",
+                    "type": "string"
+                }
+            },
+            "title": "App",
+            "type": "object"
+        }
+    }
+}
